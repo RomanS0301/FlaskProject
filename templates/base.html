@@ -2,28 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% block title -%}
-    {% if title %}
-        <title> Про Flask - {{ title }}</title>
-    {% else %}
-        <title>Про Flask</title>
-    {% endif %}
-    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Первое приложение на Flask">
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+    <title>Про Flask</title>
 </head>
 <body>
-{% block content %}
-    {% block mainmenu %}
-        <ul>
-            {% for m in menu %}
-                <li>{{ m }}</li>
-            {% endfor %}
-        </ul>
-    {% endblock mainmenu %}
-    {% if title %}
-        <h1>{{ title }}</h1>
-    {% else %}
-        <h1>Про Flask</h1>
-    {% endif %}
-{% endblock %}
+    {% block main %}
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                    <div class="logo_text">
+                        <h1><a href="/">FlaskProject</a></h1>
+                        <h2>Моё первое приложение на Flask</h2>
+                    </div>
+                </div>
+                <div class="menubar">
+                    <ul class="menu">
+                        <li class="selected"><a href="#">Главная</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Регистрация</a></li>
+                        <li><a href="#">Вход</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
 </body>
 </html>

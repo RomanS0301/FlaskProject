@@ -15,5 +15,10 @@ def about():  # put application's code here
     return render_template('about.html', title='Про Flask', menu=menu)
 
 
+@app.route('/user/<string:name>/<int:id>')
+def user(name, id):  # put application's code here
+    return 'User page ' + name + "-" + str(id)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
